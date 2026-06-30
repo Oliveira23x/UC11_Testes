@@ -27,7 +27,7 @@
         {
             foreach (var cliente in clientes)
             { 
-                if (cliente.Id == id) return null;
+                if (cliente.Id == id) return cliente;
             }
             return null;
         }

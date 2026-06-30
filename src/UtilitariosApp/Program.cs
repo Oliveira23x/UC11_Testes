@@ -11,8 +11,31 @@ Console.WriteLine($"O resultado da soma é: {resultado}");
 Console.WriteLine($"O resultado da multiplicação é: {resultado2}");
 */
 // == Testes com Cliente e Endereço == 
+var gerenciador = new GerenciadorClientes();
 
-var endereco = new Endereco("Rua B", 123, "São Paulo", "SP");
-var cliente = new Cliente(1, "Silva", "jsilva@mail.com", endereco);
+var endereco1 = new Endereco("Rua B", 123, "São Paulo", "SP");
+var endereco2 = new Endereco("Travessa X", 544, "São Paulo", "SP");
 
-Console.WriteLine(cliente.ObterInformacoes());
+
+var cliente1 = new Cliente(1, "Silva", "jsilva@mail.com", endereco1);
+var cliente2 = new Cliente(2, "Marcio", "marcio@mail.com", endereco2);
+var cliente3 = new Cliente(3, "Luana", "luana@mail.com", endereco2);
+
+
+//Console.WriteLine(cliente1.ObterInformacoes());
+
+gerenciador.AdicionarCliente(cliente1);
+gerenciador.AdicionarCliente(cliente2);
+
+gerenciador.RemoverPorId(1);
+
+Console.WriteLine($"Total de Clientes: {gerenciador.ContarClientes()}");
+Console.WriteLine($"Procurar cliente ID 2: {gerenciador.ProcurarPorId(3)?.Nome}");
+
+Console.WriteLine();
+
+Console.WriteLine(cliente1.ObterInformacoes());
+Console.WriteLine(gerenciador.ProcurarPorId(1)?.ObterInformacoes());
+
+
+
