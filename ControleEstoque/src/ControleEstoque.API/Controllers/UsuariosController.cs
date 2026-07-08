@@ -173,7 +173,7 @@ namespace ControleEstoque.API.Controllers
             {
                 var resultado = await _usuarioService.AutenticarAsync(dto);
                 if (resultado == null)
-                    return Unauthorized(new { message = "Email ou senha incorretos." });
+                    return Unauthorized(new { message = "Credenciais inválidas! Email ou senha incorretos." });
 
                 return Ok(resultado);
             }
